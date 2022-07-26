@@ -1,8 +1,6 @@
-package edu.multicamps.dao;
+package edu.multicampus.dao;
 
-
-import edu.multicamps.model.User;
-
+import edu.multicampus.model.User;
 
 public interface UserDAO {
 	public User getUserByEmailAndPassword(String email, String password);
