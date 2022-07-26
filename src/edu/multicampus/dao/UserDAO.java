@@ -1,7 +1,7 @@
-package dao;
+package edu.multicampus.dao;
 
 
-import model.User;
+import edu.multicampus.model.User;
 
 
 public interface UserDAO {

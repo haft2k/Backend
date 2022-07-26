@@ -1,4 +1,4 @@
-package utils;
+package edu.multicampus.utils;
 
 
 import java.sql.Connection;
@@ -17,7 +17,6 @@ public class DBConnection {
 
 	public DBConnection() {
 		super();
-		// TODO Auto-generated constructor stub
 		this.driver = "mysql";
 		this.host = "localhost";
 		this.port = "3306";
@@ -29,7 +28,9 @@ public class DBConnection {
 
 	public void connectDB() {
 		try {
-			String dbURL = "jdbc:" + this.driver + "://" + this.host + ":" + this.port + "/" + this.db;
+			// jdbc:mysql://localhost:3306/employeemanagement
+			String dbURL = "jdbc:" + this.driver + "://" + this.host + ":" + this.port + "/"
+									+ this.db;
 			this.conn = DriverManager.getConnection(dbURL, this.user, this.pass);
 		} catch (SQLException ex) {
 			ex.printStackTrace();
@@ -39,10 +40,10 @@ public class DBConnection {
 	public void disconnectDB() {
 		try {
 			this.conn.close();
-		} catch (SQLException ex) {
-			ex.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 
-	public Connection getConn() { return conn; }
+	public Connection getConn() { return this.conn; }
 }

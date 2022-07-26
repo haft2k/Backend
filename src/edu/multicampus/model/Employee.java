@@ -1,7 +1,7 @@
-package model;
+package edu.multicampus.model;
 
 public class Employee {
-	// Khai bao thuoc tinh
+	/* initialize attribute */
 	private int id;
 	private String fullName;
 	private String email;
@@ -11,8 +11,18 @@ public class Employee {
 	private int outsideServiceNumber;
 	private double totalSalary;
 
-	public Employee(String fullName, String email, int hourWorkPerDay, int longWork, double fixedSalary,
-			int outsideServiceNumber, double totalSalary) {
+	public Employee() {
+		super();
+	}
+
+	public Employee(String fullName, String email) {
+		super();
+		this.fullName = fullName;
+		this.email = email;
+	}
+
+	public Employee(String fullName, String email, int hourWorkPerDay, int longWork,
+							double fixedSalary, int outsideServiceNumber, double totalSalary) {
 		super();
 		this.fullName = fullName;
 		this.email = email;
@@ -23,16 +33,8 @@ public class Employee {
 		this.totalSalary = totalSalary;
 	}
 
-	public Employee() { super(); }
-
-	public Employee(String fullName, String email) {
-		super();
-		this.fullName = fullName;
-		this.email = email;
-	}
-
-	public Employee(int id, String fullName, String email, int hourWorkPerDay, int longWork, double fixedSalary,
-			int outsideServiceNumber, double totalSalary) {
+	public Employee(int id, String fullName, String email, int hourWorkPerDay, int longWork,
+							double fixedSalary, int outsideServiceNumber, double totalSalary) {
 		super();
 		this.id = id;
 		this.fullName = fullName;
@@ -70,7 +72,9 @@ public class Employee {
 
 	public int getOutsideServiceNumber() { return outsideServiceNumber; }
 
-	public void setOutsideServiceNumber(int outsideServiceNumber) { this.outsideServiceNumber = outsideServiceNumber; }
+	public void setOutsideServiceNumber(int outsideServiceNumber) {
+		this.outsideServiceNumber = outsideServiceNumber;
+	}
 
 	public double getTotalSalary() { return totalSalary; }
 
@@ -78,11 +82,10 @@ public class Employee {
 
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", fullName=" + fullName + ", email=" + email + ", hourWorkPerDay="
-				+ hourWorkPerDay + ", longWork=" + longWork + ", fixedSalary=" + fixedSalary + ", outsideServiceNumber="
-				+ outsideServiceNumber + ", totalSalary=" + totalSalary + "]";
+		return "Employee [id=" + id + ", fullName=" + fullName + ", email=" + email
+								+ ", hourWorkPerDay=" + hourWorkPerDay + ", longWork=" + longWork
+								+ ", fixedSalary=" + fixedSalary + ", outsideServiceNumber="
+								+ outsideServiceNumber + ", totalSalary=" + totalSalary + "]";
 	}
-
-	// Dinh nghia cac phuong tuc
 
 }

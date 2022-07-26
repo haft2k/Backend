@@ -1,9 +1,9 @@
-package dao;
+package edu.multicampus.dao;
 
 
 import java.util.List;
 
-import model.Employee;
+import edu.multicampus.model.Employee;
 
 
 public interface EmployeeDAO {

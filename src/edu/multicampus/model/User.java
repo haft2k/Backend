@@ -1,11 +1,13 @@
-package model;
+package edu.multicampus.model;
 
 
 import java.sql.Date;
 
 
 public class User {
-	// Khai bao thuoc tinh
+	/*
+	 * initialize attribute
+	 */
 	private int id;
 	private String email;
 	private String password;
@@ -20,11 +22,11 @@ public class User {
 
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	public User(String email, String password, String firstName, String lastName, String address, Date dob, boolean sex,
-			String phone, boolean isAdmin, boolean isActive) {
+	public User(String email, String password, String firstName, String lastName, String address,
+							Date dob, boolean sex, String phone, boolean isAdmin,
+							boolean isActive) {
 		super();
 		this.email = email;
 		this.password = password;
@@ -84,9 +86,10 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", email=" + email + ", password=" + password + ", firstName=" + firstName
-				+ ", lastName=" + lastName + ", address=" + address + ", dob=" + dob + ", sex=" + sex + ", phone="
-				+ phone + ", isAdmin=" + isAdmin + ", isActive=" + isActive + "]";
+		return "User [id=" + id + ", email=" + email + ", password=" + password + ", firstName="
+								+ firstName + ", lastName=" + lastName + ", address=" + address
+								+ ", dob=" + dob + ", sex=" + sex + ", phone=" + phone
+								+ ", isAdmin=" + isAdmin + ", isActive=" + isActive + "]";
 	}
 
 }

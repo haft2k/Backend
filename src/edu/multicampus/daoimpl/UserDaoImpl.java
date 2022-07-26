@@ -1,28 +1,25 @@
-package daoimpl;
+package edu.multicampus.daoimpl;
 
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import dao.UserDAO;
-import model.User;
-import utils.DBConnection;
+import edu.multicampus.dao.UserDAO;
+import edu.multicampus.model.User;
+import edu.multicampus.utils.DBConnection;
 
 
 public class UserDAOImpl implements UserDAO {
 
+	@Override
 	public User getUserByEmailAndPassword(String email, String password) {
-		// TODO Auto-generated method stub
 		// Quy trình 4 bước:
 		// B1: Kết nối được vào Database Server
-		// String dbURL =
-		// "jdbc:mysql://localhost:3306/employeemanagement";
 		try {
 			DBConnection dbc = new DBConnection();
 			dbc.connectDB();
-			// Connection conn = DriverManager.getConnection(dbURL,
-			// "root", "kiTs@2022");
+
 			// B2: Định nghĩa câu truy vấn và thực hiện truy vấn
 			String sql = "SELECT * FROM user WHERE email=? AND password=?";
 			PreparedStatement ps = dbc.getConn().prepareStatement(sql);
@@ -37,14 +34,13 @@ public class UserDAOImpl implements UserDAO {
 				u.setEmail(rs.getString("email"));
 				u.setFirstName(rs.getString("firstname"));
 				u.setLastName(rs.getString("lastname"));
+
 				// B4: Đóng kết nối
-				// conn.close();
 				dbc.disconnectDB();
 				return u;
 			}
 
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
